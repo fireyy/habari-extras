@@ -26,7 +26,7 @@ if ( Session::has_messages() ) {
 				</p>
 			</div>
 			<p>
-<textarea name="content" id="content" cols="100" rows="10" tabindex="4">
+<textarea name="content" id="content" rows="10" tabindex="4">
 <?php echo $commenter_content; ?>
 </textarea>
 			</p>
