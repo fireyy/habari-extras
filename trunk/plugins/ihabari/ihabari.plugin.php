@@ -5,24 +5,7 @@ require ('ihabarihandler.php');
 class iHabari extends Plugin
 {
   const MOBILE_AGENT_REGEX = '/iPhone/i';
-  /**
-   * Respond to plugin info request
-   *
-   * @return array Info about plugin
-   */
-  function info()
-  {
-    return array(
-      'name'=>'iHabari',
-      'version'=>'0.0.1',
-      'url' => 'http://gopherwood.info/',
-      'author' => 'wayne',
-      'authorurl' => 'http://gopherwood.info/',
-      'license' => 'Apache License 2.0',
-      'description' => 'iHabari',
-      'copyright' => '2009'
-    );
-  }
+
   public function action_plugin_activation ($file) {
     if (realpath ($file) == __FILE__) {
       EventLog::register_type ('iHabari');
