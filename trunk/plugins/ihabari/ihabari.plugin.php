@@ -30,10 +30,6 @@ class iHabari extends Plugin
     return $actions;
   }
 
-  public function filter_iHabari_theme_name(){
-    return Options::get( 'iphonetheme__selected_themes' );
-  }
-  
   public function action_plugin_ui( $plugin_id, $action ) {
     if ( $plugin_id == $this->plugin_id ) {
       switch ( $action ) {
@@ -85,7 +81,6 @@ class iHabari extends Plugin
     return $db_rules;
   }
 
-  //public function action_plugins_loaded () {
   public static function user_agent_checker ($rule, $stub, $pattern) {
     if (preg_match (self::MOBILE_AGENT_REGEX, $_SERVER['HTTP_USER_AGENT'])) {
       return true;
