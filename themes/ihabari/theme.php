@@ -7,9 +7,9 @@
  */
 
 // We must tell Habari to use iHabari as the custom theme class:
-define( 'THEME_CLASS', 'iHabari' );
+define( 'THEME_CLASS', 'iHabariTheme' );
 
-class iHabari extends Theme
+class iHabariTheme extends Theme
 {
 	/**
 	 * Execute on theme init to apply these filters to output
