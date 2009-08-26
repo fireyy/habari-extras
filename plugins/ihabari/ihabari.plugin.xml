@@ -3,8 +3,9 @@
   <name>iHabari</name>
   <license url="http://www.apache.org/licenses/LICENSE-2.0.html">Apache Software License 2.0</license>
   <author url="http://gopherwood.info/">wayne</author>
+  <author url="http://fireyy.com/">fireyy</author>
   <version>0.0.1</version>
-  <url>http://gopherwood.info/</url>
+  <url>http://http://code.google.com/p/habari-extras</url>
   <description><![CDATA[iHabari]]></description>
   <copyright>2009</copyright>
 </pluggable>
