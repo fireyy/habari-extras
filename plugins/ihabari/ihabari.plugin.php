@@ -18,11 +18,7 @@ class iHabari extends Plugin
     }
   }
 
-  public function action_add_template_vars( $theme ){
-    $theme->theme_url = Site::get_url('user', TRUE) . 'themes/' . Options::get( 'iphonetheme__selected_themes' );
-  }
-
-  public function filter_plugin_config( $actions, $plugin_id ) {
+  public function filter_plugin_config ($actions, $plugin_id) {
     if ( $plugin_id == $this->plugin_id ) { 
       $actions[] = 'Configure';
     }
@@ -30,17 +26,30 @@ class iHabari extends Plugin
     return $actions;
   }
 
-  public function action_plugin_ui( $plugin_id, $action ) {
-    if ( $plugin_id == $this->plugin_id ) {
-      switch ( $action ) {
+  public function action_plugin_ui ($plugin_id, $action) {
+    if ($plugin_id == $this->plugin_id) {
+      switch ($action) {
         case 'Configure':
-          $themes = array_keys( Themes::get_all_data() );
-          $themes = array_combine( $themes, $themes );
-          $ui = new FormUI( 'iphonetheme' );
-          $iphone_t = $ui->append( 'select', 'selected_themes', 'iphonetheme__selected_themes', 'Select themes for iphone:' );
-          $iphone_t->options =$themes;
-          $ui->append( 'submit', 'save', 'Save' );
-          $ui->out();
+          $theme_datas = Themes::get_all_data ();
+
+          $ithemes = array ();
+          $themes = array ();
+          foreach ($theme_datas as $name => $data) {
+            if (isset ($data['info']->compatible)) {
+              $ithemes[$name] = $name;
+            } else {
+              $themes[$name] = $name;
+            }
+          }
+
+          $ui = new FormUI ('iphonetheme');
+          $iphone_t = $ui->append ('select', 'selected_themes', 'iphonetheme__selected_themes', 'Select themes for iphone:');
+          $iphone_t->options = array_merge ($ithemes,
+                                            array ("separator" => "-- PC Compatible --"),
+                                            $themes);
+          $ui->selected_themes->add_validator (array ($this, 'validate_selection'));
+          $ui->append ('submit', 'save', 'Save');
+          $ui->out ();
           break;
       }
     }
@@ -75,6 +84,14 @@ class iHabari extends Plugin
     } else {
       return false;
     }
+  }
+
+  public function validate_selection ($value, $control, $form) {
+    if ("separator" == $value) {
+      return array (_t("Please select a valid theme"));
+    }
+
+    return array ();
   }
 }
 ?>
