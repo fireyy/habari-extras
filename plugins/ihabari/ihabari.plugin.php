@@ -48,18 +48,6 @@ class iHabari extends Plugin
 
   public function filter_rewrite_rules( $db_rules )
   {
-/*
-    $db_rules[]= new RewriteRule (array (
-     'name' => 'iHabari',
-     'parse_regex' => '^/*^',
-     'build_str' => '',
-     'handler' => 'iHabariHandler',
-     'rule_class' => RewriteRule::RULE_CUSTOM,
-     'action' => 'start',
-     'is_active' => 1,
-     'parameters' => serialize (array ('require_match' => array ('iHabari', 'user_agent_checker'))),
-    ));
-*/
     $rules = array();
     foreach ($db_rules as $rule) {
       if (preg_match ('/^display_/', $rule->name)) {
