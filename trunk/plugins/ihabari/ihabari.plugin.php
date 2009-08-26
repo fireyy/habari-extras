@@ -35,49 +35,49 @@ class iHabari extends Plugin
     }
   }
 
-	public function action_add_template_vars( $theme ){
-		$theme->theme_url = Site::get_url('user', TRUE) . 'themes/' . Options::get( 'iphonetheme__selected_themes' );
-	}
+  public function action_add_template_vars( $theme ){
+    $theme->theme_url = Site::get_url('user', TRUE) . 'themes/' . Options::get( 'iphonetheme__selected_themes' );
+  }
 
-	public function filter_plugin_config( $actions, $plugin_id ) {
-		if ( $plugin_id == $this->plugin_id ) { 
-			$actions[] = 'Configure';
-		}
-		
-		return $actions;
-	}
+  public function filter_plugin_config( $actions, $plugin_id ) {
+    if ( $plugin_id == $this->plugin_id ) { 
+      $actions[] = 'Configure';
+    }
+    
+    return $actions;
+  }
 
-	public function filter_iHabari_theme_name(){
-		return Options::get( 'iphonetheme__selected_themes' );
-	}
-	
-	public function action_plugin_ui( $plugin_id, $action ) {
-		if ( $plugin_id == $this->plugin_id ) {
-			switch ( $action ) {
-				case 'Configure':
-					$themes = array_keys( Themes::get_all_data() );
-					$themes = array_combine( $themes, $themes );
-					$ui = new FormUI( 'iphonetheme' );
-					$iphone_t = $ui->append( 'select', 'selected_themes', 'iphonetheme__selected_themes', 'Select themes for iphone:' );
-					$iphone_t->options =$themes;
-					$ui->append( 'submit', 'save', 'Save' );
-					$ui->out();
-					break;
-			}
-		}
-	}
+  public function filter_iHabari_theme_name(){
+    return Options::get( 'iphonetheme__selected_themes' );
+  }
+  
+  public function action_plugin_ui( $plugin_id, $action ) {
+    if ( $plugin_id == $this->plugin_id ) {
+      switch ( $action ) {
+        case 'Configure':
+          $themes = array_keys( Themes::get_all_data() );
+          $themes = array_combine( $themes, $themes );
+          $ui = new FormUI( 'iphonetheme' );
+          $iphone_t = $ui->append( 'select', 'selected_themes', 'iphonetheme__selected_themes', 'Select themes for iphone:' );
+          $iphone_t->options =$themes;
+          $ui->append( 'submit', 'save', 'Save' );
+          $ui->out();
+          break;
+      }
+    }
+  }
 
-	public function filter_rewrite_rules( $db_rules )
-	{
+  public function filter_rewrite_rules( $db_rules )
+  {
 /*
-		$db_rules[]= new RewriteRule (array (
-		 'name' => 'iHabari',
-		 'parse_regex' => '^/*^',
-		 'build_str' => '',
-		 'handler' => 'iHabariHandler',
+    $db_rules[]= new RewriteRule (array (
+     'name' => 'iHabari',
+     'parse_regex' => '^/*^',
+     'build_str' => '',
+     'handler' => 'iHabariHandler',
      'rule_class' => RewriteRule::RULE_CUSTOM,
-		 'action' => 'start',
-		 'is_active' => 1,
+     'action' => 'start',
+     'is_active' => 1,
      'parameters' => serialize (array ('require_match' => array ('iHabari', 'user_agent_checker'))),
     ));
 */
@@ -99,8 +99,8 @@ class iHabari extends Plugin
 
     $db_rules = array_merge ($db_rules, $rules);
 
-		return $db_rules;
-	}
+    return $db_rules;
+  }
 
   //public function action_plugins_loaded () {
   public static function user_agent_checker ($rule, $stub, $pattern) {
