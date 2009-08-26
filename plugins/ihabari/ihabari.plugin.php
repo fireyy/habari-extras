@@ -68,7 +68,7 @@ class iHabari extends Plugin
          'rule_class' => RewriteRule::RULE_CUSTOM,
          'action' => $rule->action,
          'is_active' => 1,
-         'parameters' => serialize (array ('require_match' => array ('iHabari', 'user_agent_checker'))),
+         'parameters' => serialize (array ('require_match' => array ('iHabari', 'check_user_agent'))),
         ));
       }
     }
@@ -78,7 +78,7 @@ class iHabari extends Plugin
     return $db_rules;
   }
 
-  public static function user_agent_checker ($rule, $stub, $pattern) {
+  public static function check_user_agent ($rule, $stub, $pattern) {
     if (preg_match (self::MOBILE_AGENT_REGEX, $_SERVER['HTTP_USER_AGENT'])) {
       return true;
     } else {
