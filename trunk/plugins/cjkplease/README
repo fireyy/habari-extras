@@ -1,0 +1,13 @@
+ABOUT
+This plugin is used to check if there are CJK characters in comment against spam coz almost all the spam comments are in English.
+
+HISTORY
+  06/01.2009  0.1.0  First release
+
+INSTALL
+-----------------------------------
+1. Drop somechinese folder into habari/user/plugins
+2. Go to admin panel and active plugin
+3. Optional: You can configure the notification text from admin panel
+4. Optional: You can use code below to show the notification text in your template:
+     <?php echo Options::get ('cjkplease_text'); ?>
