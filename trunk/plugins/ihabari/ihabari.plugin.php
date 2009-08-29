@@ -64,6 +64,7 @@ class iHabari extends Plugin
          'name' => 'iHabari_' . $rule->name,
          'parse_regex' => $rule->parse_regex,
          'build_str' => $rule->build_str,
+         'priority' => $rule->priority > 0 ? $rule->priority - 1 : 0,
          'handler' => 'iHabariHandler',
          'rule_class' => RewriteRule::RULE_CUSTOM,
          'action' => $rule->action,
