@@ -1,6 +1,6 @@
 var rpPel = null;
 var Commentarea = null;
-var commentformid = 'commentform'
+var commentformid = 'comment-public'
 
 function $s(){
 	if(arguments.length == 1)
@@ -27,7 +27,7 @@ function $c(array){
 function commentarea(){
 	var fi = $s(commentformid).getElementsByTagName('textarea');
 	for(var i=0; i<fi.length; i++ ){
-		if(fi[i].name == 'content'){
+		if(fi[i].name == 'comment_content'){
 			return fi[i];
 		}
 	}
