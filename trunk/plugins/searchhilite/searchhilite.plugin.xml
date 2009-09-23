@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<pluggable type="plugin">
+	<name>Search Hilite</name>
+	<author url="http://fireyy.com">fireyy</author>
+	<version>0.1</version>
+	<url>http://fireyy.com/</url>
+	<description><![CDATA[Search Hilite for Habari.]]></description>
+	<license url="http://www.apache.org/licenses/LICENSE-2.0.html">Apache License 2.0</license>
+	<copyright>2009</copyright>
+</pluggable>
+
