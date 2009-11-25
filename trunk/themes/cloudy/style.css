@@ -20,7 +20,7 @@ a img {border:none;}
 ul {margin: 0;padding: 0;list-style: none;}
 article,aside,figure,header,hgroup,menu,nav,section,footer{display:block}
 /* Global */
-body{background: #000 url(i/bg.png) repeat-x;color: #4F545D;text-shadow: #f9f9f9 0 1px 0;padding:20px 0 25px;font: 12px/20px 'Fontin Sans', 'Myriad Pro', "Lucida Sans", "Lucida Grande", Arial, sans-serif;}
+body{background: #000 url(i/bg.png) repeat-x;color: #4F545D;text-shadow: #f9f9f9 0 1px 0;padding:20px 0 25px;font: 12px/20px "Lucida Sans", "Lucida Grande", Arial, sans-serif;}
 ::selection { background: rgba(0,0,0,0.2); }
 ::-moz-selection { background: rgba(0,0,0,0.2); }
 a {color: #4F545D; text-decoration:none;outline: none;-webkit-transition: all 0.2s;}
@@ -28,7 +28,6 @@ a:hover {text-decoration:none;}
 a:active, a:focus {
 	text-decoration:line-through;
 }
-strong {text-transform: uppercase;}
 h2,h3,h4,h5,h6 {font-family: 'Fontin Sans', 'Myriad Pro', 'Microsoft JhengHei', 'Microsoft YaHei', Arial, sans-serif;}
 h1 {font-size:38px;margin:0 0 5px;}
 h2 {font-size:18px;color:#333;text-transform: capitalize;}
@@ -250,7 +249,7 @@ kbd {font:11px Verdana,monospace;background:#f5f5f5;border:1px solid;border-widt
 .entry-content p { text-indent: 20px; }
 .entry-content p.img_bar {text-indent: 0;}
 .entry-content p.img_bar a {background: none;padding: 0;margin: 0;border:0;}
-.entry-content img {-webkit-box-shadow: rgba(0,0,0,0.8) 0 0 10px;-moz-box-shadow: rgba(0,0,0,0.5) 0 0 10px;opacity: 0.9;max-width:420px;-webkit-transition-duration: 0.5s;}
+.entry-content img {-webkit-box-shadow: rgba(0,0,0,0.8) 0 0 10px;-moz-box-shadow: rgba(0,0,0,0.5) 0 0 10px;opacity: 0.9;max-width:500px;-webkit-transition-duration: 0.5s;}
 .entry-content img:hover {-webkit-box-shadow: rgba(0,0,0,1) 0 0 20px;-moz-box-shadow: rgba(0,0,0,1) 0 0 20px;opacity: 1;}
 .entry-content img.wp-smiley,.entry-content img.habari-smiley,.entry-content img.iright,.entry-content img.noborder {border: 0;padding: 0;background-color: transparent;-webkit-box-shadow: none;opacity: 1;}
 .entry-content img.iright {float: right;margin: 0 0 10px 10px;}
