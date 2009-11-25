@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<pluggable type="theme">
+	<name>cloudy</name>
+	<license url="http://www.apache.org/licenses/LICENSE-2.0.html">Apache Software License 2.0</license>
+	
+	<author url="http://fireyy.com">fireyy</author>
+	
+	<version>1.0</version>
+	<url>http://fireyy.com</url>
+	<description><![CDATA[cloudy theme for Habari.]]></description>
+	
+	<template_engine>rawphpengine</template_engine>
+
+	<copyright>2009</copyright>
+</pluggable>
