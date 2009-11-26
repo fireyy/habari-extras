@@ -102,7 +102,7 @@ kbd {font:11px Verdana,monospace;background:#f5f5f5;border:1px solid;border-widt
 	bottom:0;
 	left:0;
 	width:100%;
-	height:80px;
+	height:70px;
 	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(0,0,0,0)), color-stop(0.1,rgba(0,0,0,0)), to(rgba(0,0,0,1)));
 	background: -moz-linear-gradient(top left, bottom left, from(rgba(0,0,0,0)), color-stop(0.1,rgba(0,0,0,0)), to(rgba(0,0,0,1)));
 }
@@ -296,10 +296,10 @@ kbd {font:11px Verdana,monospace;background:#f5f5f5;border:1px solid;border-widt
 	background: -moz-linear-gradient(top left, bottom left, from(#686F7C), to(#4F545D));
 }
 .navigation {
-	margin: 0 20px;
+	margin: 0 10px;
 }
-.nav-previous {float: left;}
-.nav-next {float: right;}
+.nav-previous {float: left;margin-top:10px;}
+.nav-next {float: right;margin-top:10px;}
 .page-title {
 	border-top: 1px solid #A9AEB5;
 	text-align: center;
@@ -348,12 +348,12 @@ h3.reply span,
 	border-top: 1px solid #6F7784;
 	padding: 5px 0 0 0;
 }
-.entry-related ul{line-height:24px;}
 .sidebar .widget {padding: 0;}
 .entry-content li,
 .entry-content dt,
 .sidebar .widget li,
 .entry-related li {background: url(i/fireyy.png) no-repeat -35px -251px;padding-left: 18px;}
+.entry-related li,
 .sidebar .widget li {background-position: -30px -251px;padding: 3px 0 2px 23px;border-bottom:1px solid #A9AEB5;}
 .sidebar ul.comment-authors { padding: 0;margin-top: 0;border-top: none; }
 .sidebar ul.comment-authors li,.sidebar ul.tag-cloud li {display: inline;background:none;padding: 0;margin:0 2px 5px 0;border:0;}
@@ -386,7 +386,7 @@ span.edit-link {background-position: -235px -228px;}
 /* comments */
 #comments {
 	clear: both;
-	padding-top: 15px;
+	padding-top: 10px;
 }
 .metalinks {text-align: right;display:none;}
 #commentlist {
