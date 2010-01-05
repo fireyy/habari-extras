@@ -140,6 +140,7 @@ class ThreadedComment extends Plugin
   public function action_add_template_vars ($theme, $handler_vars) {
     if (!$theme->template_engine->assigned ('commentThreadMaxDepth')) {
       $depth = Options::get ('threaded_comment_depth');
+
       
       if ((isset ($theme->user) && isset ($theme->post)) && ($theme->user->id == $theme->post->user_id)) {
         $depth++;

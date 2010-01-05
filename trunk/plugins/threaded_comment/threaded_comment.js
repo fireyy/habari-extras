@@ -1,6 +1,6 @@
 var rpPel = null;
 var Commentarea = null;
-var commentformid = 'comment-public'
+var commentformid = 'commentform'
 
 function $s(){
 	if(arguments.length == 1)
