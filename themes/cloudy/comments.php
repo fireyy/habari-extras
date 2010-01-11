@@ -107,14 +107,14 @@ if ( $post->comments->moderated->count ) {
 			}
 		?>
 			<li id="comment-<?php echo $comment->id; ?>" class="comment<?php echo $class; ?>">
-				<div class="comment-info">
+				<p class="comment-info">
 					<?php if ( Plugins::is_loaded('Gravatar') ) { ?>
 						<img src="<?php echo $comment->gravatar; ?>" width="32" height="32" class="gravatar" alt="gravatar" />
 					<?php } else { ?>
 						<img src="http://www.gravatar.com/avatar.php?gravatar_id=<?php echo md5( $comment->email ); ?>&amp;size=32&amp;rating=G" width="32" height="32" alt="gravatar" class="gravatar" />
 					<?php } ?>
 					<span class="comment-author vcard"><a href="<?php echo $comment->url; ?>" rel="external"><?php echo $comment->name; ?></a></span><span class="comment-meta"><a href="#comment-<?php echo $comment->id; ?>" title="<?php _e('Time of this Comment'); ?>"><?php echo $comment->date->out('Y-m-d g:ia'); ?></a></span>
-				</div>
+				</p>
 		       <div class="comment-content">
 		        <?php echo $comment->content_out; ?>
 		        <?php if ( $comment->status == Comment::STATUS_UNAPPROVED ) : ?> <em class="unapproved"><?php _e('Your comment is awaiting moderation'); ?></em><?php endif; ?>
@@ -132,5 +132,18 @@ if ( $post->comments->moderated->count ) {
 <?php } else { ?>
 	<p class="nocomment"><?php _e('There are currently no comments.'); ?></p>
 <?php }
- if ( ! $post->info->comments_disabled ) { include_once( 'commentform.php' ); } ?>
+ if ( !$post->info->comments_disabled ) { 
+?>
+<div id="respond">
+    <h3 class="reply"><span><?php _e('Leave a Reply'); ?></span></h3>
+	<div class="formcontainer">
+		<?php
+		if ( Session::has_messages() ) {
+			Session::messages_out();
+		}
+		$post->comment_form()->out(); ?>
+	</div>
+</div>
+<?php
+ } ?>
 </div><!-- #comments -->

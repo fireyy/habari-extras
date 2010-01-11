@@ -32,8 +32,9 @@ class bambooTheme extends Theme
 	
 	public function add_template_vars()
 	{
-	
+		//Add formcontrol template with input before label
 		$this->add_template( 'cloudy_text', dirname(__FILE__) . '/formcontrol_text.php' );
+		
 		if( !$this->template_engine->assigned( 'pages' ) ) {
 			$this->assign('pages', Posts::get( array( 'content_type' => 'page', 'status' => Post::status('published'), 'nolimit' => 1 ) ) );
 		}
@@ -95,25 +96,25 @@ class bambooTheme extends Theme
 	 */
 	public function action_form_comment( $form ) {
 	
-		$form->append('static','email_not', _t( '<p class="comment-note"><a id="cancel_reply" href="javascript:void(0)" onclick="movecfm(null,0,1,null);" style="display:none;">X</a>Email address is not published</p>') );
-		$form->move_before( $form->email_not, $form->commenter );
-		$form->commenter->caption = _t('Name') . '<span class="required">' . ( Options::get('comments_require_id') == 1 ? ' *' : '' ) . '</span>';
-		$form->commenter->template = 'cloudy_text';
-		$form->email->caption = _t('Mail') . '<span class="required">' . ( Options::get('comments_require_id') == 1 ? ' *' : '' ) . '</span>';
-		$form->email->template = 'cloudy_text';
-		$form->url->caption = _t('Website');
-		$form->url->template = 'cloudy_text';
+		$form->append('static','cf_email_not', _t( '<p class="comment-note"><a id="cancel_reply" href="javascript:void(0)" onclick="movecfm(null,0,1,null);" style="display:none;">X</a>Email address is not published</p>') );
+		$form->move_before( $form->cf_email_not, $form->cf_commenter );
+		$form->cf_commenter->caption = _t('Name') . '<span class="required">' . ( Options::get('comments_require_id') == 1 ? ' *' : '' ) . '</span>';
+		$form->cf_commenter->template = 'cloudy_text';
+		$form->cf_email->caption = _t('Mail') . '<span class="required">' . ( Options::get('comments_require_id') == 1 ? ' *' : '' ) . '</span>';
+		$form->cf_email->template = 'cloudy_text';
+		$form->cf_url->caption = _t('Website');
+		$form->cf_url->template = 'cloudy_text';
 		if ( Plugins::is_loaded('CJKPlease') ){
-			$form->append('static','cjkplease_text', _t( '<p class="comment-note">'.Options::get('cjkplease_text').'</p>') );
-			$form->move_before( $form->cjkplease_text, $form->content );
+			$form->append('static','cf_cjkplease_text', _t( '<p class="comment-note">'.Options::get('cjkplease_text').'</p>') );
+			$form->move_before( $form->cf_cjkplease_text, $form->cf_content );
 		}
-	    $form->content->caption = '';
+	    $form->cf_content->caption = '';
 	    if ( Plugins::is_loaded('ThreadedComment') ) {
-			$form->append('static','emailnotify', _t( '<div id="emailnotify-control" class="formcontrol"><label for="emailnotify"><input type="checkbox" name="emailnotify" id="emailnotify" checked="true" /> '._t('Receive Email Notify').'</label><input type="hidden" value="" name="commentparent" id="commentparent"/></div>') );
-			$form->move_before( $form->emailnotify, $form->submit );
+			$form->append('static','cf_emailnotify', _t( '<div id="emailnotify-control" class="formcontrol"><label for="emailnotify"><input type="checkbox" name="emailnotify" id="emailnotify" checked="true" /> '._t('Receive Email Notify').'</label><input type="hidden" value="" name="commentparent" id="commentparent"/></div>') );
+			$form->move_before( $form->cf_emailnotify, $form->cf_submit );
 		}
-		$form->submit->caption = _t( 'Submit' );
-		$form->submit->class = 'formcontrol';
+		$form->cf_submit->caption = _t( 'Submit' );
+		$form->cf_submit->class = 'formcontrol';
 	}
 
 }
