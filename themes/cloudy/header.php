@@ -33,8 +33,8 @@
 		<?php //if ( Plugins::is_loaded('Twitter') ) $theme->twitter(); ?>
 		<?php if ( Plugins::is_loaded('TwitterLitte') ) $theme->twitterlitte(); ?>
 		<div id="misc">
-			<a id="sitefeed" href="<?php $theme->feed_alternate(); ?>" title="订阅更新"><span>订阅更新</span></a>
-			<a id="fav-label" title="Bookmark on Delicious" href="http://delicious.com/post?url=<?php Site::out_url( 'habari' ); ?>&amp;title=<?php Options::out( 'title' ) ?>, <?php Options::out( 'tagline' ); ?>" target="_blank">收藏</a>
+			<a id="sitefeed" href="<?php $theme->feed_alternate(); ?>" title="Subscribe"><span>Subscribe</span></a>
+			<a id="fav-label" title="Bookmark on Delicious" href="http://delicious.com/post?url=<?php Site::out_url( 'habari' ); ?>&amp;title=<?php Options::out( 'title' ) ?>, <?php Options::out( 'tagline' ); ?>" target="_blank">Favorite</a>
 			<?php $theme->display ('searchform' ); ?>
 		</div>
 	</header>	
