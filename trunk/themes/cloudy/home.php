@@ -5,7 +5,7 @@
      	<time class="entry-date"><a href="<?php echo $post->pubdate->text_format('{Y}/{m}'); ?>" title="View all posts written in <?php echo $post->pubdate->text_format('{M} {Y}'); ?>"><?php echo $post->pubdate->text_format('<span>{M}</span> <span class="day">{d}</span>, <span>{Y}</span>'); ?></a></time>
 		<h2 class="entry-title"><?php
 		$atype = $post->tags_type;
-		echo '<a class="'.$atype.'" href="/tag/'.$atype.'" title="查看所有'.$atype.'文章">'.$atype.'</a>'; ?><a href="<?php echo $post->permalink; ?>" title="<?php echo $post->title; ?>"><?php echo $post->title_out; ?></a></h2>
+		echo '<a class="'.$atype.'" href="/tag/'.$atype.'" title="View all articles about '.$atype.'">'.$atype.'</a>'; ?><a href="<?php echo $post->permalink; ?>" title="<?php echo $post->title; ?>"><?php echo $post->title_out; ?></a></h2>
 		<cite class="entry-meta">
 			<?php if ( $user ) { ?>
 			        <span class="edit-link"><a href="<?php echo $post->editlink; ?>" title="<?php _e('Edit post'); ?>"><?php _e('Edit'); ?></a></span>
