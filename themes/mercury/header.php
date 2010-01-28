@@ -16,9 +16,6 @@
  <![endif]-->
  <!--[if IE]>
  <script src="/html5.js"></script>
- <style type="text/css">
- 	.corn {display:none;}
- </style>
  <![endif]-->
  <?php $theme->header(); ?>
  <!-- Special thanks to Diagona Icons by Yusuke,they are really nice. -->
